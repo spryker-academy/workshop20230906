@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="zed" xsi:noNamespaceSchemaLocation="http://static.spryker.com/schema-01.xsd" namespace="Orm\Zed\Penguin\Persistence" package="src.Orm.Zed.Penguin.Persistence">
+  <table name="spy_penguin" idMethod="native" class="SpyPenguin">
+    <column name="id_penguin" type="INTEGER" required="true" autoIncrement="true" primaryKey="true"/>
+    <column name="uuid" type="CHAR" size="36"/>
+    <unique name="spy_penguin-unique-uuid">
+      <unique-column name="uuid"/>
+    </unique>
+    <behavior name="uuid">
+      <parameter name="key_columns" value="id_penguin"/>
+    </behavior>
+    <column name="name" type="VARCHAR" required="true"/>
+  </table>
+</database>
